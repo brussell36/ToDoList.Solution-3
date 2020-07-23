@@ -29,7 +29,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpGet("/categories/{id}")]
-    public ActionResult show(int id)
+    public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Category selectedCategory = Category.Find(id);
