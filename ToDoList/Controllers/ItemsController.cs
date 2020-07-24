@@ -20,7 +20,7 @@ namespace ToDoList.Controllers
       return View();
     }
 
-    [HttpGet("/categories/{categoryId}/items/{itemId}")]
+    [HttpGet("categories/{categoryId}/items/{itemId}")]
     public ActionResult Show(int categoryId, int itemId)
     {
       Item item = Item.Find(itemId);
