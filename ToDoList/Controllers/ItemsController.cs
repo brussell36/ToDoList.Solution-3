@@ -57,11 +57,11 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Item item, int CategoryId)
+    public ActionResult Edit(Item item, int CategoryId, Category category)
     {
-      foreach(Category category in _db.Categories)
+      foreach(Category cat in _db.Categories)
       {
-        if(category.Name == category.Name)
+        if(cat.Name == category.Name)
         {
           return RedirectToAction("Details", new { id = item.ItemId });
         }
@@ -109,7 +109,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult DeleteCategory(int joinId)
+    public ActionResult DeleteCategory(int joinId, Item item)
     {
       var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);
       _db.CategoryItem.Remove(joinEntry);
